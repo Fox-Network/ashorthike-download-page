@@ -1,0 +1,28 @@
+// TODO colors?
+$boxShadowSoft: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+$medium: screen and (max-width: 1270px);
+
+@mixin hideOnMedium{
+  @media screen and (max-width: 1270px) {
+    display: none;
+  }
+}
+
+@mixin medium{
+  @media screen and (max-width: 1270px) {
+    @content;
+  }
+}
+
+@mixin hideOnSmall{
+  @media screen and (max-width: 1070px) {
+    display: none;
+  }
+}
+
+@mixin small{
+  @media screen and (max-width: 1070px) {
+    @content;
+  }
+}
