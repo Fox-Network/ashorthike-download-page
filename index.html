@@ -49,7 +49,7 @@ sass: css/index.css
     </div>
     <div class="row transition">
       <div>
-        <div class="btn download">
+        <div class="btn download" onclick="download('newest')">
           <img src="assets/icons/download.svg"> <span>Download</span>
         </div>
         <p>
@@ -98,11 +98,32 @@ sass: css/index.css
     </a>
   </div>
 </div>
+<div id="downloaded" style="display: none">
+  <h1>THANK YOU!</h1>
+  <h2>You Can Support Us Here:</h2>
+  <div class="btn donate">
+    <img src="assets/icons/paypal.svg"> <span>Leave a tip!</span>
+  </div>
+  <div class="altDownload">If the download didn't start click <a href="#">here</a>.</div>
+</div>
 
 <script>
   const intro = document.getElementById("intro");
+  const downloaded = document.getElementById("downloaded");
+
   document.onscroll = (ev) => {
     intro.style['background-position-y'] = `${-intro.getBoundingClientRect().top / 3}px`;
-    console.log()
   }
+
+  downloaded.onclick = (ev) => {
+    if (ev.target == downloaded) {
+      downloaded.style.display = "none";
+    }
+  }
+
+  function download(url) {
+    downloaded.style.display = "flex";
+    console.log(downloaded.style);
+  }
+
 </script>

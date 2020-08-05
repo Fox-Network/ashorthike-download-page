@@ -51,4 +51,11 @@ html, body{
   span {
     font-size: 25px;
   }
+
+  &.donate{
+    background-image: linear-gradient(to right, #163DA2, #301662);
+    &:hover{
+      background-image: linear-gradient(to right, #163DA2, #351079);
+    }
+  }
 }
