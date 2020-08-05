@@ -9,6 +9,8 @@
   position: relative;
   z-index: 1;
 
+  overflow-x: hidden;
+
   .blurLoader {
     background-image: linear-gradient(rgba(78, 4, 76, 0), rgba(78, 4, 76, 0.144), $bottomColor 95%);
 
@@ -40,6 +42,10 @@
   .mainContent{
     align-items: center;
     margin: auto 0;
+
+    @include medium{
+      flex-direction: column-reverse;
+    }
   }
 
   .videoContainer {
@@ -47,8 +53,15 @@
     margin-left: 10vw;
     border-radius: 35px;
     box-shadow: $boxShadowSoft;
-    min-width: 30vw;
-    min-height: 18vw;
+    padding: 12px;
+    // min-width: 30vw;
+    // min-height: 18vw;
+
+    @include medium{
+      margin: 0 auto;
+    }
+
+    @include hideOnSmall;
   }
 
   .titleContainer{
@@ -56,11 +69,23 @@
     text-align: center;
     color: white;
 
+    @include medium{
+      margin-bottom: 200px;
+    }
+
+    @include small{
+      margin: 0 5vw;
+    }
+
     h1{
       font-size: 60pt;
       margin: 0;
       position: relative;
       z-index: 2;
+
+      @include small{
+        font-size: 50pt;
+      }
     }
 
     h2{
@@ -69,6 +94,10 @@
       font-weight: 400;
       position: relative;
       z-index: 2;
+
+      @include small{
+        font-size: 35pt;
+      }
     }
 
     position: relative;
@@ -81,6 +110,8 @@
       height: 400%;
       top: -150%;
       left: -25%;
+
+      @include hideOnSmall;
 
       svg{
         width: 100%;
@@ -135,17 +166,37 @@
     margin: 0 10vw;
     justify-content: space-between;
     align-content: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 25px;
+      
+    @include small{
+      justify-content: center;
+      padding-bottom: 40px;
+    }
 
-    .download{
-      background-color: #42E6A4;
-      &:hover{
-        background-color: #30d694;
+    .downloadContainer{
+      width: fit-content;
+      @include small{
+        margin-bottom: 40px;
+      }
+
+      .download{
+        background-color: #42E6A4;
+
+        @include small{
+          margin: 0 auto;
+        }
+
+        &:hover{
+          background-color: #30d694;
+        }
       }
     }
 
     p{
       color: white;
       font-size: 20px;
+      margin-bottom: 0;
     }
   }
 }
