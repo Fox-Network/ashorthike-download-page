@@ -41,7 +41,6 @@ html, body{
   transition-timing-function: ease-in-out;
   &:hover {
     box-shadow: $boxShadowSoftSmall;
-    filter: contrast(1.3);
   }
   
   img {

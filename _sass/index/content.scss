@@ -40,5 +40,9 @@
 
   .report {
     background-color: #4289E6;
+
+    &:hover {
+      background-color: #3a7fda;
+    }
   }
 }
