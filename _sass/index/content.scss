@@ -1,3 +1,44 @@
 @import '../vars.scss';
 
-// TODO
+#content {
+  background-color: $bottomColor;
+  color: white;
+  padding: 1px 0;
+
+  .box{
+    margin: 100px 10vw;
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        font-size: 23px;
+        background-image: linear-gradient(to right, #20234D, rgba(0, 0, 0, 0) 50%);
+        padding: 14px 25px;
+        border-radius: 30px;
+        margin: 15px 0;
+
+        a{
+          text-decoration: none;
+          color: inherit;
+        }
+
+        &:hover {
+          background-image: linear-gradient(to right, #20234D, rgba(0, 0, 0, 0) 80%);
+        }
+      }
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 0;
+    }
+  }
+
+  .report {
+    background-color: #4289E6;
+  }
+}
