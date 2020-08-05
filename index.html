@@ -3,4 +3,64 @@ layout: default
 sass: css/index.css
 ---
 
-<h1>TODO</h1>
+<div id="intro">
+  <img class="absLogo" src="assets/logo_colored.svg" />
+  <div class="row mainContent">
+    <div class="videoContainer">
+    </div>
+    <div class="titleContainer">
+      <h1>A SHORT HIKE</h1>
+      <h2>GERMAN TRANSLATION</h2>
+      <div class="svgContainer">
+        <svg viewBox="0 0 400 200" preserveAspectRatio="none" id="mySVG" onclick="alert_coords(evt)">
+          <script>
+            let str = "";
+            let c = 0;
+            var svg = document.getElementById("mySVG")
+            var pt = svg.createSVGPoint();  // Created once for document
+
+            function alert_coords(evt) {
+              pt.x = evt.clientX;
+              pt.y = evt.clientY;
+
+              // The cursor point, translated into svg coordinates
+              var cursorpt = pt.matrixTransform(svg.getScreenCTM().inverse());
+              str += `${Math.round(cursorpt.x)},${Math.round(cursorpt.y)} `;
+              c++;
+
+              if (c == 3) {
+                console.log(str);
+                c = 0;
+                str = "";
+              }
+            }                    
+          </script>
+          <polygon points="90,62 20,69 124,123" class="c1" />
+          <polygon points="152,99 238,25 230,82" class="c2" />
+          <polygon points="269,90 381,38 339,5" class="c2" />
+          <polygon points="238,117 396,114 335,163" class="c1" />
+          <polygon points="186,119 201,150 158,155" class="c2" />
+          <polygon points="111,141 125,164 69,167" class="c1" />
+          Sorry, your browser does not support inline SVG.
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="row transition">
+    <div>
+      <div class="btn download">
+        <img src="assets/icons/send.svg"> <span>Download</span>
+      </div>
+      <p>
+        <b>Latest Version:</b> <br>
+        ver 1.68 - a-short-hike mountainquest.yarn
+      </p>
+    </div>
+    <div class="btn donate">
+      <img src="assets/icons/paypal.svg"> <span>Leave a tip!</span>
+    </div>
+  </div>
+</div>
+<div id="content">
+  Hey
+</div>

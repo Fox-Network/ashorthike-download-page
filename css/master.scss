@@ -2,6 +2,7 @@
 ---
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
+@import 'vars.scss';
 
 html, body{
   margin: 0;
@@ -20,4 +21,26 @@ html, body{
 
 .wrap{
   flex-wrap: wrap;
+}
+
+.btn {
+  color: white;
+  box-shadow: $boxShadowSoft;
+  padding: 10px 20px;
+  border-radius: 25px;
+  height: fit-content;
+  width: fit-content;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  
+  img {
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  span {
+    font-size: 25px;
+  }
 }

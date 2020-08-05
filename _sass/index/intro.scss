@@ -1,3 +1,170 @@
 @import '../vars.scss';
 
-// TODO
+#intro {
+  background-image: linear-gradient(rgba(78, 4, 76, 0), rgba(78, 4, 76, 0.144), $bottomColor 95%), url('/assets/banner.png');
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+  z-index: 1;
+
+  .absLogo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    width: 70px;
+    max-width: 15vw;
+
+    opacity: 0.7;
+    cursor: pointer;
+
+    &:hover{
+      opacity: 1;
+    }
+  }
+
+  .mainContent{
+    align-items: center;
+    margin: auto 0;
+  }
+
+  .videoContainer {
+    background-color: #3636ca;
+    margin-left: 10vw;
+    border-radius: 35px;
+    box-shadow: $boxShadowSoft;
+    min-width: 30vw;
+    min-height: 18vw;
+  }
+
+  .titleContainer{
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+
+    h1{
+      font-size: 60pt;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    h2{
+      font-size: 40pt;
+      margin: 0;
+      font-weight: 400;
+      position: relative;
+      z-index: 2;
+    }
+
+    position: relative;
+    z-index: 2;
+
+    .svgContainer {
+      z-index: 1;
+      position: absolute;
+      width: 150%;
+      height: 400%;
+      top: -150%;
+      left: -25%;
+
+      svg{
+        width: 100%;
+        height: 100%;
+
+        polygon{
+          stroke-width: 3;
+          stroke-linejoin: round;
+          fill-opacity: 0.6;
+          stroke-opacity: 0.8;
+
+          animation-duration: 10s;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: infinite;
+          animation-name: anim1;
+        }
+
+        polygon:nth-of-type(1){
+          animation-delay: 600ms;
+        }
+
+        polygon:nth-of-type(2){
+          animation-delay: 1600ms;
+        }
+
+        polygon:nth-of-type(3){
+          animation-delay: 2000ms;
+        }
+
+        polygon:nth-of-type(4){
+          animation-delay: 2600ms;
+        }
+
+        polygon:nth-of-type(5){
+          animation-delay: 3000ms;
+        }
+
+        .c1{
+          fill: #7a1ad4;
+          stroke: #7a1ad4;
+        }
+
+        .c2{
+          fill: #e95b30;
+          stroke: #e95b30;
+        }
+      }
+    }
+  }
+
+  .transition{
+    margin: 0 10vw;
+    justify-content: space-between;
+    align-content: flex-start;
+
+    .download{
+      background-color: #42E6A4;
+    }
+
+    .donate{
+      background-image: linear-gradient(to right, #163DA2, #301662);
+    }
+
+    p{
+      color: white;
+      font-size: 20px;
+    }
+  }
+}
+
+@keyframes anim1 {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+
+  30% {
+    transform: translateX(2px) translateY(3px);
+  }
+
+  50% {
+    transform: translateX(3px) translateY(-2px);
+  }
+
+  70% {
+    transform: translateX(-2px) translateY(-3px);
+  }
+
+  85% {
+    transform: translateX(-3px) translateY(4px);
+  }
+
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
