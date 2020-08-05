@@ -230,10 +230,12 @@
 @keyframes initialBlur {
   0% {
     backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
   }
   
   100% {
     backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
   }
 }
 
