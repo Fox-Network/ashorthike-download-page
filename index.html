@@ -51,17 +51,17 @@ sass: css/index.css
     </div>
     <div class="row transition">
       <div class="downloadContainer column">
-        <div class="btn download" onclick="download('newest')">
+        <div class="btn download" onclick="download('{{site.downloads[0].url}}')">
           <img src="assets/icons/download.svg"> <span>Download</span>
         </div>
         <p>
-          <b>Latest Version:</b> <br>
-          ver 1.68 - a-short-hike mountainquest.yarn
+          <b>Latest Version:</b> ({{site.downloads[0].date}})<br>
+          {{site.downloads[0].name}}
         </p>
       </div>
-      <div class="btn donate">
+      <a href="{{site.donateUrl}}" target="_blank" class="btn donate">
         <img src="assets/icons/paypal.svg"> <span>Leave a tip!</span>
-      </div>
+      </a>
     </div>
   </div>
 </div>
@@ -69,32 +69,20 @@ sass: css/index.css
   <div class="box">
     <h1>OLDER VERSIONS</h1>
     <ul>
-      <li>
-        <a href="#">ver 1.67 - a-short-hike mountainquest.yarn</a>
-        <span>July 4, 2020</span>
+      {% for version in site.downloads %}
+      {% if forloop.index != 1 %}
+      <li onclick="download('{{version.url}}')">
+        <a>{{version.name}}</a>
+        <span>{{version.date}}</span>
       </li>
-      <li>
-        <a href="#">ver 1.67 - a-short-hike mountainquest.yarn</a>
-        <span>July 4, 2020</span>
-      </li>
-      <li>
-        <a href="#">ver 1.67 - a-short-hike mountainquest.yarn</a>
-        <span>July 4, 2020</span>
-      </li>
-      <li>
-        <a href="#">ver 1.67 - a-short-hike mountainquest.yarn</a>
-        <span>July 4, 2020</span>
-      </li>
-      <li>
-        <a href="#">ver 1.67 - a-short-hike mountainquest.yarn</a>
-        <span>July 4, 2020</span>
-      </li>
+      {% endif %}
+      {% endfor %}
     </ul>
   </div>
 
   <div class="box">
     <h1>FOUND A TYPO? oပo</h1>
-    <a href="#" class="btn report">
+    <a href="{{site.reportUrl}}" target="_blank" class="btn report">
       <img src="assets/icons/send.svg">
       <span>Report It Here!</span>
     </a>
@@ -106,12 +94,13 @@ sass: css/index.css
   <div class="btn donate">
     <img src="assets/icons/paypal.svg"> <span>Leave a tip!</span>
   </div>
-  <div class="altDownload">If the download didn't start click <a href="#">here</a>.</div>
+  <div class="altDownload">If the download didn't start click <a href="#" id="downloadAnker">here</a>.</div>
 </div>
 
 <script>
   const intro = document.getElementById("intro");
   const downloaded = document.getElementById("downloaded");
+  const downloadAnker = document.getElementById("downloadAnker");
 
   document.onscroll = (ev) => {
     intro.style['background-position-y'] = `${-intro.getBoundingClientRect().top / 3}px`;
@@ -125,7 +114,9 @@ sass: css/index.css
 
   function download(url) {
     downloaded.style.display = "flex";
-    console.log(downloaded.style);
+
+    downloadAnker.href = url;
+    downloadAnker.click();
   }
 
 </script>
