@@ -2,8 +2,9 @@
 
 #downloaded{
   position: fixed;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  background-color: #2217365c;
   top: 0;
   left: 0;
   height: 100%;
@@ -15,7 +16,7 @@
   text-align: center;
   align-content: center;
 
-  animation: 200ms linear 0s swipeIn;
+  animation: 500ms ease 0s fadeIn;
 
   color: white;
 
@@ -47,11 +48,15 @@
   }
 }
 
-@keyframes swipeIn {
+@keyframes fadeIn {
   0% {
-    transform: translateY(100%);
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    opacity: 1;
   }
 }
