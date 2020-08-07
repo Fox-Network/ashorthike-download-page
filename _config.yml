@@ -2,6 +2,7 @@ url: "https://devleoko.github.io/JustADownloadPage/"
 title: "A Short Hike - German"
 description: "A Short Hike - German translation files"
 reportUrl: "https://github.com/DevLeoko/JustADownloadPage/issues"
+impressumUrl: "https://google.de"
 donateUrl: "https://www.paypal.com/"
 downloads:
   - name: "ver 1.68 - a-short-hike mountainquest.yarn"

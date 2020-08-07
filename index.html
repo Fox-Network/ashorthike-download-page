@@ -71,7 +71,7 @@ sass: css/index.css
     <ul>
       {% for version in site.downloads %}
       {% if forloop.index != 1 %}
-      <li onclick="download('{{version.url}}')">
+      <li onclick="download('{{version.url}}', false)">
         <a>{{version.name}}</a>
         <span>{{version.date}}</span>
       </li>
@@ -87,13 +87,19 @@ sass: css/index.css
       <span>Report It Here!</span>
     </a>
   </div>
+
+  <div id="footer">
+    <span>Coded by <a href="https://skamps.eu" target="_blank">Leoko</a> / Fork on <a
+        href="https://github.com/DevLeoko/JustADownloadPage" target="_blank">GitHub</a></span>
+    <a href="{{site.impressumUrl}}">Impressum</a>
+  </div>
 </div>
 <div id="downloaded" style="display: none">
   <h1>THANK YOU!</h1>
   <h2>You Can Support Us Here:</h2>
-  <div class="btn donate">
+  <a href="{{site.donateUrl}}" target="_blank" class="btn donate">
     <img src="assets/icons/paypal.svg"> <span>Leave a tip!</span>
-  </div>
+  </a>
   <div class="altDownload">If the download didn't start click <a href="#" id="downloadAnker">here</a>.</div>
 </div>
 
@@ -112,8 +118,9 @@ sass: css/index.css
     }
   }
 
-  function download(url) {
-    downloaded.style.display = "flex";
+  function download(url, popup = true) {
+    if (popup)
+      downloaded.style.display = "flex";
 
     downloadAnker.href = url;
     downloadAnker.click();
