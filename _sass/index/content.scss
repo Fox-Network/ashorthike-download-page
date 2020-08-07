@@ -9,6 +9,8 @@
     margin: 100px 10vw;
 
     ul {
+      perspective: 7vw;
+      perspective-origin: 50% 100px;
       padding: 0;
 
       li {
@@ -21,6 +23,8 @@
         margin: 15px 0;
         font-size: 23px;
         cursor: pointer;
+        transform-style: preserve-3d;
+        transition: transform .3s;
 
         @include small{
           font-size: 20px;
@@ -33,6 +37,7 @@
         }
 
         &:hover {
+          transform: rotateY(1deg);
           background-image: linear-gradient(to right, #20234D, rgba(0, 0, 0, 0) 80%);
         }
 
