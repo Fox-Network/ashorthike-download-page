@@ -7,11 +7,32 @@ sass: css/index.css
   <div class="blurLoader">
     <img class="absLogo" src="assets/logo_colored.svg" />
     <div class="row mainContent">
-      <div class="videoContainer">
-        <iframe width="504" height="285" src="https://www.youtube-nocookie.com/embed/{{site.youtubeVideoId}}"
-          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
+      <div class="videoContainer" id="video"></div>
+      <script>
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+        player = new YT.Player('video', {
+          height: '504',
+          width: '285',
+          videoId: '{{site.youtubeVideoId}}',
+          playerVars: { 'autoplay': 1, 'controls': 0, 'mute': 1, 'disablekb': 1, 'fs': 0 },
+          events: { 'onStateChange': onPlayerStateChange }
+        });
+        }
+
+        function onPlayerStateChange(event) {
+          if (event.data == YT.PlayerState.ENDED) {
+          player.seekTo(0);
+          player.playVideo();
+          }
+        }
+      </script>
       <div class="titleContainer">
         <h1>A SHORT HIKE</h1>
         <h2>GERMAN TRANSLATION</h2>
