@@ -114,8 +114,8 @@
       z-index: 1;
       position: absolute;
       width: 150%;
-      height: 400%;
-      top: -150%;
+      height: 300%;
+      top: -100%;
       left: -25%;
 
       @include hideOnSmall;
