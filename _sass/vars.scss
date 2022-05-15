@@ -1,6 +1,7 @@
 $bottomColor: #221736;
-$boxShadowSoft: 0px 0px 15px rgba(0, 0, 0, 0.8);
-$boxShadowSoftSmall: 0px 0px 10px rgba(0, 0, 0, 0.6);
+$boxShadowSoft: 0 5px 50px rgba(0, 0, 0, 0.5);
+$boxShadowSoftSmall: 0 5px 15px rgba(0, 0, 0, 0.5);
+$boxShadowSoftSmallHover: 0 10px 25px rgba(0, 0, 0, 0.5);
 
 $medium: screen and (max-width: 1270px);
 

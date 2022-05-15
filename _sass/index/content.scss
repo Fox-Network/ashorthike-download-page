@@ -17,14 +17,14 @@
         list-style: none;
         display: flex;
         justify-content: space-between;
-        background-image: linear-gradient(to right, #20234D, rgba(0, 0, 0, 0) 50%);
-        padding: 14px 0px 14px 25px;
+        background-image: linear-gradient(to right, #20234c, rgba(0, 0, 0, 0) 50%);
+        box-shadow: 0;
+        padding: 14px 25px;
         border-radius: 30px;
-        margin: 15px 0;
+        margin: 15px 15px;
         font-size: 23px;
         cursor: pointer;
-        transform-style: preserve-3d;
-        transition: transform .3s;
+        transition: margin .3s, box-shadow .3s;
 
         @include small{
           font-size: 20px;
@@ -37,8 +37,9 @@
         }
 
         &:hover {
-          transform: rotateY(.25deg);
-          background-image: linear-gradient(to right, #20234D, rgba(0, 0, 0, 0) 80%);
+          margin: 15px 0;
+          box-shadow: 0 0 0 5px #303472;
+          background-image: linear-gradient(to right, #20234D, rgba(0, 0, 0, 0) 75%);
         }
 
         span {
@@ -51,9 +52,31 @@
       font-size: 40px;
       margin-bottom: 0;
     }
+
+    code{
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 5px;
+      padding: 1px 5px;
+    }
+    a {
+      text-decoration: none;
+      color: #4289E6;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    ol {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 10px 25px 10px 50px;
+    }
   }
 
   .report {
+    color: white !important;
     background-color: #4289E6;
 
     &:hover {

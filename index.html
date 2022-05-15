@@ -6,7 +6,7 @@ sass: css/index.css
 <div id="intro">
   <div class="blurLoader">
     <a href="https://fuly.network">
-      <img class="absLogo" src="assets/logo_colored.svg" />
+      <img class="absLogo" src="assets/logo.svg" />
     </a>
     <span class="absCopyText">Picture (c) by <a href="https://twitter.com/adamgryu">adamgryu</a></span>
     <div class="row mainContent">
@@ -39,8 +39,7 @@ sass: css/index.css
       </script>
       <div class="titleContainer">
         <h1>A SHORT HIKE</h1>
-        <h2>UNOFFICIAL</h2>
-        <h2>GERMAN TRANSLATION</h2>
+        <h2>UNOFFICIAL GERMAN<br>TRANSLATION</h2>
         <div class="svgContainer">
           <svg viewBox="0 0 400 200" preserveAspectRatio="none" id="mySVG" onclick="alert_coords(evt)">
             <script>
@@ -94,17 +93,27 @@ sass: css/index.css
 </div>
 <div id="content">
   <div class="box">
-    <h1>OLDER VERSIONS</h1>
+    <h1>ALL DOWNLOADS</h1>
     <ul>
       {% for version in site.downloads %}
-      {% if forloop.index != 1 %}
       <li onclick="download('{{version.url}}', false)">
         <a>{{version.name}}</a>
         <span>{{version.date}}</span>
       </li>
-      {% endif %}
       {% endfor %}
     </ul>
+  </div>
+
+  <div class="box">
+    <h1>WICH VERSION DO I NEED?</h1>
+    {% capture version_instructions %}{% include_relative instructions/version_instructions.md %}{% endcapture %}
+    {{ version_instructions | markdownify }}
+  </div>
+
+  <div class="box">
+    <h1>HOW TO INSTALL</h1>
+    {% capture installation_instructions %}{% include_relative instructions/installation_instructions.md %}{% endcapture %}
+    {{ installation_instructions | markdownify }}
   </div>
 
   <div class="box">
@@ -117,14 +126,14 @@ sass: css/index.css
 
   <div id="footer">
     <span>Coded by <a href="https://skamps.eu" target="_blank">Leoko</a> / Fork on <a
-        href="https://github.com/DevLeoko/JustADownloadPage" target="_blank">GitHub</a></span>
+        href="https://github.com/Fox-Network/ashorthike-download-page" target="_blank">GitHub</a></span>
     <span>We are not affiliated with A Short Hike. | 
-      <a href="{{site.impressumUrl}}">Imprint</a></span>
+      <a href="{{site.contactUrl}}">Contact</a></span>
   </div>
 </div>
 <div id="downloaded" style="display: none">
   <h1>THANK YOU!</h1>
-  <h2>You Can Support Us Here:</h2>
+  <h2>You can support us here:</h2>
   <a href="{{site.donateUrl}}" target="_blank" class="btn donate">
     <img src="assets/icons/paypal.svg"> <span>Leave a tip!</span>
   </a>

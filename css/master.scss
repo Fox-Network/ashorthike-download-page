@@ -25,7 +25,7 @@ html, body{
 
 .btn {
   color: white;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.5);;
+  box-shadow: $boxShadowSoftSmall;
   padding: 10px 20px;
   border-radius: 25px;
   height: fit-content;
@@ -40,7 +40,7 @@ html, body{
   transition-duration: 250ms;
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    box-shadow: $boxShadowSoftSmallHover;
   }
   
   img {

@@ -2,16 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://fuly.network/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://fuly.network/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="https://fuly.network/favicon/favicon.ico">
+
+  <meta property="og:title" content="{{site.title}}">
+  <meta property="og:description" content="{{site.description}}">
+  <meta property="og:image" content="assets/banner.png">
+  <meta property="og:url" content="{{site.url}}">
+  <meta name="theme-color" content="#ff804b">
+  <meta name="twitter:image" content="assets/banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="css/master.css">
   {% if page.sass %}
   <link rel="stylesheet" href="{{page.sass}}">
   {% endif %}
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>{{site.title}}</title>
-  <meta name="DESCRIPTION"   content="{{site.description}}" />
 
-  <!-- TODO: Add favicon -->
+  <title>{{site.title}}</title>
 </head>
 <body>
   {{ content }}
