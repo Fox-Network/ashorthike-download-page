@@ -1,0 +1,33 @@
+name: Jekyll site CI
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - LICENSE
+      - README.md
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - LICENSE
+      - README.md
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - uses: helaili/jekyll-action@v2
+        with:
+          target_branch: page_build
+          target_path: /
+          keep_history: true
+          token: ${{ secrets.GITHUB_TOKEN }}
