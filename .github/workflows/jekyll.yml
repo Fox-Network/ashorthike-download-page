@@ -29,5 +29,4 @@ jobs:
         with:
           target_branch: page_build
           target_path: /
-          keep_history: true
           token: ${{ secrets.GITHUB_TOKEN }}
