@@ -13,6 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.DATE_PAT }}
 
       - name: updating date on v1.8-v1.9
         if: github.event.action == 'update_date_v1.8-v1.9'
