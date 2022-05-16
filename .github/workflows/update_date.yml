@@ -1,0 +1,33 @@
+name: Updating date CI
+
+on:
+  repository_dispatch:
+    types:
+      - update_date_v1.8-v1.9
+      - update_date_v1.4
+
+jobs:
+  update:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: updating date on v1.8-v1.9
+        if: github.event.event_type == "update_date_v1.8-v1.9"
+        run: |
+          TODAY=$(date '+%d %b %Y')
+          sed -i '/downloads:/{n;n;s/\(date\).*/\1: '"\"${TODAY}\""'/}' _config.yml
+
+      - name: updating date on v1.4
+        if: github.event.event_type == "update_date_v1.4"
+        run: |
+          TODAY=$(date '+%d %b %Y')
+          sed -i '/downloads:/{n;n;n;n;n;s/\(date\).*/\1: '"\"${TODAY}\""'/}' _config.yml
+
+      - name: push changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: 'Updated Date 📅'
