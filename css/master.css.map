@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "master.css",
+	"sources": [
+		"master.scss",
+		"_sass/vars.scss"
+	],
+	"sourcesContent": [
+		"@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');\n@import 'vars.scss';\n\nhtml, body{\n  margin: 0;\n  padding: 0;\n  font-family: 'Work Sans', sans-serif;\n}\n\n.row{\n  display: flex;\n}\n\n.col{\n  display: flex;\n  flex-direction: column;\n}\n\n.wrap{\n  flex-wrap: wrap;\n}\n\n.btn {\n  color: white;\n  box-shadow: $boxShadowSoftSmall;\n  padding: 10px 20px;\n  border-radius: 25px;\n  height: fit-content;\n  width: fit-content;\n  cursor: pointer;\n  text-decoration: none;\n\n  display: flex;\n  justify-content: center;\n\n  transition-property: all;\n  transition-duration: 250ms;\n  &:hover {\n    transform: translateY(-5px);\n    box-shadow: $boxShadowSoftSmallHover;\n  }\n  \n  img {\n    height: 30px;\n    margin-right: 10px;\n  }\n\n  span {\n    font-size: 25px;\n  }\n\n  &.donate{\n    background-image: linear-gradient(to right, #163DA2, #301662);\n    &:hover{\n      background-image: linear-gradient(to right, #163DA2, #351079);\n    }\n  }\n}\n",
+		"$bottomColor: #221736;\n$boxShadowSoft: 0 5px 50px rgba(0, 0, 0, 0.5);\n$boxShadowSoftSmall: 0 5px 15px rgba(0, 0, 0, 0.5);\n$boxShadowSoftSmallHover: 0 10px 25px rgba(0, 0, 0, 0.5);\n\n$medium: screen and (max-width: 1270px);\n\n@mixin hideOnMedium{\n  @media screen and (max-width: 1270px) {\n    display: none;\n  }\n}\n\n@mixin medium{\n  @media screen and (max-width: 1270px) {\n    @content;\n  }\n}\n\n@mixin hideOnSmall{\n  @media screen and (max-width: 1070px) {\n    display: none;\n  }\n}\n\n@mixin small{\n  @media screen and (max-width: 1070px) {\n    @content;\n  }\n}"
+	],
+	"names": [],
+	"mappings": "AAAA,OAAO,CAAC,mFAAI;AAGZ,AAAA,IAAI,EAAE,IAAI,CAAA,EACR,MAAM,EAAE,CAAC,EACT,OAAO,EAAE,CAAC,EACV,WAAW,EAAE,uBAAuB,GACrC;;AAED,AAAA,IAAI,CAAA,EACF,OAAO,EAAE,IAAI,GACd;;AAED,AAAA,IAAI,CAAA,EACF,OAAO,EAAE,IAAI,EACb,cAAc,EAAE,MAAM,GACvB;;AAED,AAAA,KAAK,CAAA,EACH,SAAS,EAAE,IAAI,GAChB;;AAED,AAAA,IAAI,CAAC,EACH,KAAK,EAAE,KAAK,EACZ,UAAU,ECtBS,CAAC,CAAC,GAAG,CAAC,IAAI,CAAC,kBAAkB,EDuBhD,OAAO,EAAE,SAAS,EAClB,aAAa,EAAE,IAAI,EACnB,MAAM,EAAE,WAAW,EACnB,KAAK,EAAE,WAAW,EAClB,MAAM,EAAE,OAAO,EACf,eAAe,EAAE,IAAI,EAErB,OAAO,EAAE,IAAI,EACb,eAAe,EAAE,MAAM,EAEvB,mBAAmB,EAAE,GAAG,EACxB,mBAAmB,EAAE,KAAK,GAqB3B;;AAnCD,AAeE,IAfE,CAeA,KAAK,CAAC,EACN,SAAS,EAAE,gBAAgB,EAC3B,UAAU,ECpCY,CAAC,CAAC,IAAI,CAAC,IAAI,CAAC,kBAAkB,GDqCrD;;AAlBH,AAoBE,IApBE,CAoBF,GAAG,CAAC,EACF,MAAM,EAAE,IAAI,EACZ,YAAY,EAAE,IAAI,GACnB;;AAvBH,AAyBE,IAzBE,CAyBF,IAAI,CAAC,EACH,SAAS,EAAE,IAAI,GAChB;;AA3BH,AA6BE,IA7BE,AA6BD,OAAO,CAAA,EACN,gBAAgB,EAAE,2CAA2C,GAI9D;;AAlCH,AA+BI,IA/BA,AA6BD,OAAO,CAEJ,KAAK,CAAA,EACL,gBAAgB,EAAE,2CAA2C,GAC9D"
+}

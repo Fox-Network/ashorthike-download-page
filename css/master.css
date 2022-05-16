@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap");
+html, body { margin: 0; padding: 0; font-family: 'Work Sans', sans-serif; }
+
+.row { display: flex; }
+
+.col { display: flex; flex-direction: column; }
+
+.wrap { flex-wrap: wrap; }
+
+.btn { color: white; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); padding: 10px 20px; border-radius: 25px; height: fit-content; width: fit-content; cursor: pointer; text-decoration: none; display: flex; justify-content: center; transition-property: all; transition-duration: 250ms; }
+
+.btn:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); }
+
+.btn img { height: 30px; margin-right: 10px; }
+
+.btn span { font-size: 25px; }
+
+.btn.donate { background-image: linear-gradient(to right, #163DA2, #301662); }
+
+.btn.donate:hover { background-image: linear-gradient(to right, #163DA2, #351079); }
+
+/*# sourceMappingURL=master.css.map */

@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "text.css",
+	"sources": [
+		"text.scss",
+		"_sass/vars.scss"
+	],
+	"sourcesContent": [
+		"@import 'vars.scss';\n\n// TODO",
+		"$bottomColor: #221736;\n$boxShadowSoft: 0 5px 50px rgba(0, 0, 0, 0.5);\n$boxShadowSoftSmall: 0 5px 15px rgba(0, 0, 0, 0.5);\n$boxShadowSoftSmallHover: 0 10px 25px rgba(0, 0, 0, 0.5);\n\n$medium: screen and (max-width: 1270px);\n\n@mixin hideOnMedium{\n  @media screen and (max-width: 1270px) {\n    display: none;\n  }\n}\n\n@mixin medium{\n  @media screen and (max-width: 1270px) {\n    @content;\n  }\n}\n\n@mixin hideOnSmall{\n  @media screen and (max-width: 1070px) {\n    display: none;\n  }\n}\n\n@mixin small{\n  @media screen and (max-width: 1070px) {\n    @content;\n  }\n}"
+	],
+	"names": [],
+	"mappings": ""
+}

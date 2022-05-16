@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://fuly.network/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://fuly.network/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="https://fuly.network/favicon/favicon.ico">
+
+  <meta property="og:title" content="A Short Hike - German Translation - Fox Network">
+  <meta property="og:description" content="Unofficial German translation for the game A Short Hike 🍂">
+  <meta property="og:image" content="/assets/banner.png">
+  <meta property="og:url" content="https://ashorthike-de.fuly.network">
+  <meta name="theme-color" content="#ff804b">
+  <meta name="twitter:image" content="/assets/banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="/css/master.css">
+  
+  <link rel="stylesheet" href="css/index.css">
+  
+
+  <title>A Short Hike - German Translation - Fox Network</title>
+</head>
+<body>
+  <div id="intro">
+  <div class="blurLoader">
+    <a href="https://fuly.network">
+      <img class="absLogo" src="assets/logo.svg" />
+    </a>
+    <span class="absCopyText">Picture (c) by <a href="https://twitter.com/adamgryu">adamgryu</a></span>
+    <div class="row mainContent">
+      <div class="videoContainer" id="video"></div>
+      <script>
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+        player = new YT.Player('video', {
+          width: '504',
+          height: '284',
+          host: 'https://www.youtube-nocookie.com',
+          videoId: 'l4bWwobx_LQ',
+          playerVars: { 'autoplay': 1, 'controls': 0, 'mute': 1, 'disablekb': 1, 'fs': 0 },
+          events: { 'onStateChange': onPlayerStateChange }
+        });
+        }
+
+        function onPlayerStateChange(event) {
+          if (event.data == YT.PlayerState.ENDED) {
+          player.seekTo(0);
+          player.playVideo();
+          }
+        }
+      </script>
+      <div class="titleContainer">
+        <h1>A SHORT HIKE</h1>
+        <h2>UNOFFICIAL GERMAN<br>TRANSLATION</h2>
+        <div class="svgContainer">
+          <svg viewBox="0 0 400 200" preserveAspectRatio="none" id="mySVG" onclick="alert_coords(evt)">
+            <script>
+              let str = "";
+              let c = 0;
+              var svg = document.getElementById("mySVG")
+              var pt = svg.createSVGPoint();  // Created once for document
+
+              function alert_coords(evt) {
+                pt.x = evt.clientX;
+                pt.y = evt.clientY;
+
+                // The cursor point, translated into svg coordinates
+                var cursorpt = pt.matrixTransform(svg.getScreenCTM().inverse());
+                str += `${Math.round(cursorpt.x)},${Math.round(cursorpt.y)} `;
+                c++;
+
+                if (c == 3) {
+                  console.log(str);
+                  c = 0;
+                  str = "";
+                }
+              }                    
+            </script>
+            <polygon points="90,62 20,69 124,123" class="c1" />
+            <polygon points="152,99 238,25 230,82" class="c2" />
+            <polygon points="269,90 381,38 339,5" class="c2" />
+            <polygon points="238,117 396,114 335,163" class="c1" />
+            <polygon points="186,119 201,150 158,155" class="c2" />
+            <polygon points="111,141 125,164 69,167" class="c1" />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="row transition">
+      <div class="downloadContainer column">
+        <div class="btn download" onclick="download('/downloads/LANG_German.yarn_lines.csv')">
+          <img src="assets/icons/download.svg"> <span>Download</span>
+        </div>
+        <p>
+          <b>Latest Version:</b> (16 May 2022)<br>
+          Version 1.8 - 1.9
+        </p>
+      </div>
+      <a href="./donate" target="_blank" class="btn donate">
+        <img src="assets/icons/paypal.svg"> <span>Leave a tip!</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <div class="box">
+    <h1>ALL DOWNLOADS</h1>
+    <ul>
+      
+      <li onclick="download('/downloads/LANG_German.yarn_lines.csv', false)">
+        <a>Version 1.8 - 1.9</a>
+        <span>16 May 2022</span>
+      </li>
+      
+      <li onclick="download('/downloads/MountainQuest.yarn.txt', false)">
+        <a>Version 1.4</a>
+        <span>16 May 2022</span>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="box">
+    <h1>WICH VERSION DO I NEED?</h1>
+    
+    <ol>
+  <li>
+    <p>Open the game and go to <code class="language-plaintext highlighter-rouge">options &gt; info &gt; version</code>. Here you can see what version you current have.</p>
+  </li>
+  <li>
+    <p>Follow the installation instructions below.</p>
+  </li>
+</ol>
+
+  </div>
+
+  <div class="box">
+    <h1>HOW TO INSTALL</h1>
+    
+    <h2 id="-installation-instructions-for-v18---v19">⚙ Installation instructions for v1.8 - v1.9</h2>
+
+<ol>
+  <li>
+    <p>Download the latest version of the translation from <a href="/downloads/LANG_German.yarn_lines.csv">here</a>.</p>
+  </li>
+  <li>
+    <p>Go to your A Short Hike installation path and open the <code class="language-plaintext highlighter-rouge">AShortHike_Data</code> folder.</p>
+  </li>
+  <li>
+    <p>Just copy the file <code class="language-plaintext highlighter-rouge">LANG_German.yarn_lines.csv</code> into the <code class="language-plaintext highlighter-rouge">AShortHike_Data</code> folder.</p>
+  </li>
+  <li>
+    <p>Happy hiking! 🍂</p>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="-installation-instructions-for-v14">⚙ Installation instructions for v1.4</h2>
+
+<ol>
+  <li>
+    <p>Download the latest version of the translation from <a href="/downloads/MountainQuest.yarn.txt">here</a>.</p>
+  </li>
+  <li>
+    <p>Download the latest Release of UABE wich can be found <a href="https://github.com/SeriousCache/UABE">here</a>.</p>
+  </li>
+  <li>
+    <p>Extract UABE, open the folder and click on <code class="language-plaintext highlighter-rouge">AssetBundleExtractor.exe</code>.</p>
+  </li>
+  <li>
+    <p>Now click on <code class="language-plaintext highlighter-rouge">File &gt; Open</code> and go to your A Short Hike installation path.</p>
+  </li>
+  <li>
+    <p>Go into the <code class="language-plaintext highlighter-rouge">AShortHike_Data</code> folder and open <code class="language-plaintext highlighter-rouge">sharedassets0.assets</code>.</p>
+  </li>
+  <li>
+    <p>Click on <code class="language-plaintext highlighter-rouge">View &gt; Search</code> by name and type in the Query field <code class="language-plaintext highlighter-rouge">MountainQuest.yarn</code>.</p>
+  </li>
+  <li>
+    <p>If the program found an asset that has the same name, select it and click on the right side <code class="language-plaintext highlighter-rouge">Plugins &gt; Import from .txt</code>.</p>
+  </li>
+  <li>
+    <p>Select and open the file named <code class="language-plaintext highlighter-rouge">MountainQuest.yarn.txt</code> wich you downloaded in step 1.</p>
+  </li>
+  <li>
+    <p>Click <code class="language-plaintext highlighter-rouge">OK</code>, then <code class="language-plaintext highlighter-rouge">Yes</code> and save the file on an empty space.</p>
+  </li>
+  <li>
+    <p>Now you can close the program and just replace your saved file with the file named <code class="language-plaintext highlighter-rouge">sharedassets0.assets</code> in the <code class="language-plaintext highlighter-rouge">AShortHike_Data</code> folder.</p>
+  </li>
+  <li>
+    <p>Happy hiking! 🍂</p>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h3 id="project-can-be-found-on-github">Project can be found on <a href="https://github.com/Fox-Network/ashorthike-translation-de">GitHub</a>.</h3>
+
+  </div>
+
+  <div class="box">
+    <h1>FOUND A TYPO? oပo</h1>
+    <a href="https://forms.fuly.network/ashorthike-translation-typo" target="_blank" class="btn report">
+      <img src="assets/icons/send.svg">
+      <span>Report It Here!</span>
+    </a>
+  </div>
+
+  <div id="footer">
+    <span>Coded by <a href="https://skamps.eu" target="_blank">Leoko</a> / Fork on <a
+        href="https://github.com/Fox-Network/ashorthike-download-page" target="_blank">GitHub</a></span>
+    <span>We are not affiliated with A Short Hike. | 
+      <a href="https://fuly.network/contact">Contact</a></span>
+  </div>
+</div>
+<div id="downloaded" style="display: none">
+  <h1>THANK YOU!</h1>
+  <h2>You can support us here:</h2>
+  <a href="./donate" target="_blank" class="btn donate">
+    <img src="assets/icons/paypal.svg"> <span>Leave a tip!</span>
+  </a>
+  <div class="altDownload">If the download didn't start click <a href="#" id="downloadAnker">here</a>.</div>
+</div>
+
+<script>
+  const intro = document.getElementById("intro");
+  const downloaded = document.getElementById("downloaded");
+  const downloadAnker = document.getElementById("downloadAnker");
+
+  document.onscroll = (ev) => {
+    intro.style['background-position-y'] = `${-intro.getBoundingClientRect().top / 3}px`;
+  }
+
+  downloaded.onclick = (ev) => {
+    if (ev.target == downloaded) {
+      downloaded.style.display = "none";
+    }
+  }
+
+  function download(url, popup = true) {
+    if (popup)
+      downloaded.style.display = "flex";
+
+    downloadAnker.href = url;
+    downloadAnker.click();
+  }
+
+</script>
+
+</body>
+</html>
